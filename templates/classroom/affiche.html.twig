@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Classroom</title>
+</head>
+<body>
+    <table border="2">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Action</td> 
+  </tr>
+{% for classroom in classroom %}
+<tr>
+<td>{{classroom.id}}</td>
+<td>{{classroom.name}}</td>
+<td>
+  
+  <a href="{{path('supprimerc',{'id':classroom.id})}}">supprimer</a>
+  <a href="{{path('updatec',{'id':classroom.id})}}">modifier</a>
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+</table>
+<a href="{{path('addclassroom')}}">ajouter</a>
+</body>
+</html>
